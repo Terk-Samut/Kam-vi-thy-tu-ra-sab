@@ -2,6 +2,6 @@ import {கிளிமூக்கு_உருவாக்கு} from './kili
 import messages from './trads.json';
 
 export default கிளிமூக்கு_உருவாக்கு({
-  மூல்_மொழி: 'fr',
+  மூல்_மொழி: 'ខ្មែរ',
   மூல்_மொழிபெயர்ப்புகள்: messages,
 });
