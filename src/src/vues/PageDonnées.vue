@@ -1,0 +1,44 @@
+<template>
+  <v-container class="text-center">
+    <TitrePage
+      :titre="t('ទំព័រ.ទិន្នន័យ.ចំណងជើង')"
+      :image="imgFavoris"
+      :sous-titre="t('pages.favoris.sousTitre')"
+    />
+    <v-list class="text-start">
+      <v-list-item
+        prepend-icon="mdi-plus"
+        :title="t('pages.favoris.commentAjouterNouveau.titre')"
+        :subtitle="t('pages.favoris.commentAjouterNouveau.sousTitre')"
+        @click="$router.push(encodeURI('/données/'))"
+      />
+    </v-list>
+  </v-container>
+</template>
+<script setup lang="ts">
+import type {favoris} from '@constl/ipa';
+import type {ClientConstellation} from '@constl/ipa';
+import {inject, ref} from 'vue';
+
+import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kilimukku/kilimukku-vue';
+
+import TitrePage from '/@/components/communs/TitrePage.vue';
+import {utiliserImagesDéco} from '/@/composables/images';
+import {enregistrerÉcoute} from '../components/utils';
+
+const constl = inject<ClientConstellation>('constl');
+
+const {useI18n} = கிளிமூக்கை_உபயோகி();
+const {t} = useI18n();
+const {obtImageDéco} = utiliserImagesDéco();
+
+const imgFavoris = obtImageDéco('automatisation');
+
+// Mes favoris
+const mesFavoris = ref<favoris.ÉlémentFavorisAvecObjet[]>();
+enregistrerÉcoute(
+  constl?.favoris.suivreFavoris({
+    f: x => (mesFavoris.value = x),
+  }),
+);
+</script>

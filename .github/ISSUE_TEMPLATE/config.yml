@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions et réponses
+    url: https://github.com/reseau-constellation/iug/discussions/categories/q-a
+    about: Vous pouvez poser toutes vos questions sur la page de discussion.
