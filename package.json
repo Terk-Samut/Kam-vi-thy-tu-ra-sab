@@ -13,7 +13,7 @@
     "watch": "vite src --port 5174",
     "preview": "pnpm compile && vite preview src",
     "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts,vue",
-    "typecheck": "vue-tsc --noEmit -p src/tsconfig.json",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,vue,json}\""
   },
   "devDependencies": {

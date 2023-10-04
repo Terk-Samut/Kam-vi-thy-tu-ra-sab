@@ -12,6 +12,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "ignorePatterns": "dist",
   "rules": {
     /** These rules are disabled because they are incompatible with prettier */
     "vue/html-self-closing": "off",

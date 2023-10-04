@@ -3,7 +3,6 @@ import type {Ref} from 'vue';
 import {utiliserÉtatThème} from '/@/état/thème';
 import {storeToRefs} from 'pinia';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 const imagesThème: {[key: string]: {[key: string]: Promise<typeof import('*.svg')>}} = {
   constr: {
     unDraw: import('/@/assets/undraw/undraw_under_construction_46pa.svg'),
