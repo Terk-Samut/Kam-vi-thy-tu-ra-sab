@@ -63,14 +63,13 @@
 import {onMounted, ref, inject, watchEffect} from 'vue';
 import {useDisplay} from 'vuetify';
 
-
 import LogoAnimé from '/@/components/LogoAnimé.vue';
 import InitialiserCompte from '/@/components/InitialiserCompte.vue';
 
 import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kilimukku/kilimukku-vue';
 import {utiliserNumération} from '/@/plugins/localisation/localisation';
 import {enregistrerÉcoute} from '../components/utils';
-import type { ClientConstellation } from '@constl/ipa';
+import type {ClientConstellation} from '@constl/ipa';
 
 const {mdAndUp} = useDisplay();
 const {useI18n} = கிளிமூக்கை_உபயோகி();

@@ -144,7 +144,6 @@ import {computed, ref, inject} from 'vue';
 import {useDisplay} from 'vuetify';
 import {isBrowser} from 'wherearewe';
 
-
 import {MAX_TAILLE_IMAGE} from '/@/consts';
 
 import {utiliserImagesDéco} from '/@/composables/images';
@@ -165,12 +164,7 @@ const nuchabäl = new Nuchabäl({});
 // Navigation générale
 const dialogue = ref(false);
 const étape = ref(0);
-const listeÉtapes = [
-  'noms',
-  'image',
-  'persister',
-  'cestParti',
-] as const;
+const listeÉtapes = ['noms', 'image', 'persister', 'cestParti'] as const;
 
 const suivant = () => {
   const é = listeÉtapes[étape.value];
@@ -189,9 +183,7 @@ const retour = () => {
   const é = listeÉtapes[étape.value];
   switch (é) {
     case 'cestParti':
-      étape.value = listeÉtapes.indexOf(
-        isBrowser ? 'persister' : 'image',
-      );
+      étape.value = listeÉtapes.indexOf(isBrowser ? 'persister' : 'image');
       break;
     default:
       étape.value--;
@@ -253,7 +245,7 @@ const sousTitreCarte = computed(() => {
 const nom = ref<string>();
 const règlesNouveauNom = computed<string[] | undefined>(() => {
   if (!nom.value?.length) return undefined;
-  const exprégÉcriture = nuchabäl.rutzibTzibanem({runuk: "ខ្មែរ"});
+  const exprégÉcriture = nuchabäl.rutzibTzibanem({runuk: 'ខ្មែរ'});
   if (!exprégÉcriture) return;
   const erreurLangue = !nom.value.match(new RegExp(exprégÉcriture, 'g'));
 

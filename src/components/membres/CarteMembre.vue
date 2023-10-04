@@ -54,7 +54,6 @@
         >
           {{ t('membres.aucunContact') }}
         </p>
-
       </v-card-text>
       <v-divider />
 
@@ -79,7 +78,6 @@ import {ref, inject} from 'vue';
 import {utiliserLangues} from '/@/plugins/localisation/localisation';
 import {enregistrerÉcoute} from '/@/components/utils';
 import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kilimukku/kilimukku-vue';
-
 
 import ImageProfil from '../communs/ImageProfil.vue';
 import {useDisplay} from 'vuetify/lib/framework.mjs';
@@ -118,5 +116,4 @@ enregistrerÉcoute(
     idCompte: props.id,
   }),
 );
-
 </script>
