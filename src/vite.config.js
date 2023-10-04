@@ -84,7 +84,7 @@ const config = {
     alias: générerAliasRésolution(),
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
-  base: '/terk-samut-dursapt/',
+  base: '/Kam-vi-thy-tu-ra-sab/',
   server: {
     fs: {
       strict: true,
