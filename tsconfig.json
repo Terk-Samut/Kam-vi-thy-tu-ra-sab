@@ -13,8 +13,7 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "#preload": ["../preload/src/index"],
-      "/@/*": ["./src/*"]
+      "/@/*": ["src/*"]
     },
     "lib": ["ESNext", "dom", "dom.iterable"]
   },
@@ -23,7 +22,6 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "types/**/*.d.ts",
-    "../../types/**/*.d.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }

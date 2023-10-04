@@ -10,7 +10,6 @@ import {NodeGlobalsPolyfillPlugin} from '@esbuild-plugins/node-globals-polyfill'
 import builtins from 'rollup-plugin-node-builtins';
 
 const PACKAGE_ROOT = __dirname;
-const PROJECT_ROOT = join(PACKAGE_ROOT, '../..');
 
 const générerExtentions = () => {
   const extentions = [
@@ -60,7 +59,7 @@ const générerExtentions = () => {
 
 const générerAliasRésolution = () => {
   const commun = {
-    '/@/': join(PACKAGE_ROOT, 'src') + '/',
+    '/@/': join(PACKAGE_ROOT) + '/',
   };
 
   return Object.assign({}, commun, {
@@ -80,7 +79,7 @@ const générerAliasRésolution = () => {
 const config = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
-  envDir: PROJECT_ROOT,
+  envDir: PACKAGE_ROOT,
   resolve: {
     alias: générerAliasRésolution(),
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
@@ -94,7 +93,7 @@ const config = {
   build: {
     sourcemap: true,
     target: 'es2020',
-    outDir: 'dist',
+    outDir: '../dist',
     assetsDir: '.',
     rollupOptions: {
       input: join(PACKAGE_ROOT, 'index.html'),

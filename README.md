@@ -1,13 +1,10 @@
-<h1 align="center">IUG Constellation</h1>
+<h1 align="center">កម្មវិធីទូរស័ព្ទ</h1>
 <h3 align="center">L'interface utilisateur graphique pour Constellation</h3>
 
 <p align="center">
-  <a href="https://github.com/reseau-constellation/iug/actions/workflows/ci.yml"><img src="https://github.com/reseau-constellation/iug/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/reseau-constellation/iug/actions/workflows/publierPage.yml"><img src="https://github.com/reseau-constellation/iug/actions/workflows/publierPage.yml/badge.svg"></a>
-  <a href="https://github.com/reseau-constellation/iug/actions/workflows/ci.yml"><img src="https://github.com/reseau-constellation/iug/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://codecov.io/gh/reseau-constellation/iug" >
- <img src="https://codecov.io/gh/reseau-constellation/iug/branch/master/graph/badge.svg?token=àcopierplustard"/>
- </a>
+  <a href="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/ci.yml"><img src="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/publierPage.yml"><img src="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/publierPage.yml/badge.svg"></a>
+  <a href="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/ci.yml"><img src="https://github.com/Terk-Samut/Kam-vi-thy-tu-ra-sab/actions/workflows/ci.yml/badge.svg"></a>
   <br>
 </p>
 

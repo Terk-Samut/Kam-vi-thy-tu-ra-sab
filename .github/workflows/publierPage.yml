@@ -22,12 +22,12 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install
-      - run: pnpm compile:web
+      - run: pnpm compile
 
       - name: Déployer
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: packages/renderer/dist/web
+          publish_dir: dist
           # cname: xn--rseau-constellation-bzb.ca
