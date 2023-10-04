@@ -5,7 +5,6 @@
       :image="imgAutomatisations"
       :sous-titre="t('pages.automatisations.sousTitre')"
     />
-    
   </v-container>
 </template>
 <script setup lang="ts">
