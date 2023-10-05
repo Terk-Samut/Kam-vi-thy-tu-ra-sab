@@ -5,26 +5,29 @@
       :image="imgFavoris"
       :sous-titre="t('pages.favoris.sousTitre')"
     />
-    <v-list class="text-start">
-      <v-list-item
-        prepend-icon="mdi-plus"
-        :title="t('pages.favoris.commentAjouterNouveau.titre')"
-        :subtitle="t('pages.favoris.commentAjouterNouveau.sousTitre')"
-        @click="$router.push(encodeURI('/données/'))"
-      />
-    </v-list>
+    <AjoutDonnees>
+      <template #activator="{props}">
+        <v-list-item v-bind="props" prepend-icon="mdi-plus">
+          <v-list-item-title>
+            
+          </v-list-item-title>
+        </v-list-item>
+      </template>
+    </AjoutDonnees>
+    {{ mesDonnées }}
   </v-container>
 </template>
 <script setup lang="ts">
-import type {favoris} from '@constl/ipa';
-import type {ClientConstellation} from '@constl/ipa';
+import type {ClientConstellation, tableaux} from '@constl/ipa';
 import {inject, ref} from 'vue';
 
 import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kilimukku/kilimukku-vue';
 
 import TitrePage from '/@/components/communs/TitrePage.vue';
 import {utiliserImagesDéco} from '/@/composables/images';
-import {enregistrerÉcoute} from '../components/utils';
+import {enregistrerÉcoute} from '/@/components/utils';
+import { clefTableau, idNuée, schémaDonnées } from '/@/consts';
+import AjoutDonnees from '/@/components/données/AjoutDonnées.vue';
 
 const constl = inject<ClientConstellation>('constl');
 
@@ -35,10 +38,13 @@ const {obtImageDéco} = utiliserImagesDéco();
 const imgFavoris = obtImageDéco('automatisation');
 
 // Mes favoris
-const mesFavoris = ref<favoris.ÉlémentFavorisAvecObjet[]>();
+const mesDonnées = ref<tableaux.élémentDonnées<tableaux.élémentBdListeDonnées>[]>();
 enregistrerÉcoute(
-  constl?.favoris.suivreFavoris({
-    f: x => (mesFavoris.value = x),
+  constl?.bds.suivreDonnéesDeTableauUnique({
+    schémaBd: schémaDonnées,
+    idNuéeUnique: idNuée,
+    clefTableau,
+    f: x => (mesDonnées.value = x),
   }),
 );
 </script>
