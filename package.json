@@ -6,7 +6,7 @@
     "name": "Julien Jean Malard-Adam",
     "url": "https://github.com/julienmalard"
   },
-  "version": "0.2.1",
+  "version": "0.0.1",
   "main": "dist/index.cjs",
   "scripts": {
     "compile": "cross-env MODE=production NODE_OPTIONS='--max-old-space-size=8192' pnpm vite build src",

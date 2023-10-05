@@ -24,8 +24,7 @@
           <v-window-item :value="0">
             <v-text-field
               v-model="nom"
-              :hint="t('listeNomsProfil.indiceNom')"
-              :label="t('listeNomsProfil.indiceNom')"
+              :label="t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ឈ្មោះ.ជំនួយ')"
               :rules="règlesNouveauNom"
               variant="outlined"
             ></v-text-field>
@@ -40,13 +39,11 @@
               @image-changee="(img?: ArrayBuffer) => imageChangée(img)"
             />
             <p class="mt-3 text-center text-caption">
-              {{ t('accueil.initialiserCompte.texteImage') }}
+              {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.រូបភាព.ព័ត៌មាន') }}
             </p>
           </v-window-item>
           <v-window-item :value="2">
-            <p class="mb-4"> {{ t('accueil.initialiserCompte.textePersister.1') }} </p>
-            <p class="mb-4"> {{ t('accueil.initialiserCompte.textePersister.2') }} </p>
-            <p class="mb-4"> {{ t('accueil.initialiserCompte.textePersister.3') }} </p>
+            <p class="mb-4"> {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ការពារទិន្នន័យ.ពន្យល់') }} </p>
 
             <div
               v-if="donnéesPersistées"
@@ -58,7 +55,7 @@
                 @click="étape++"
               >
                 <v-icon start>mdi-check</v-icon>
-                {{ t('accueil.initialiserCompte.déjàPersistées') }}
+                {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ការពារទិន្នន័យ.បានការពាររួចហើយ') }}
               </v-btn>
             </div>
             <div
@@ -71,14 +68,14 @@
                 variant="flat"
                 @click="() => persisterDonnées()"
               >
-                {{ t('accueil.initialiserCompte.persister') }}
+                {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ការពារទិន្នន័យ.ពាររួចហើយ') }}
               </v-btn>
               <v-btn
                 class="mt-3 mx-3"
                 variant="outlined"
                 @click="étape++"
               >
-                {{ t('accueil.initialiserCompte.pasPersister') }}
+                {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ការពារទិន្នន័យ.កុំ​ការពារទេ') }}
               </v-btn>
             </div>
           </v-window-item>
@@ -91,11 +88,8 @@
             ></v-img>
             <div class="text-center">
               <h3 class="text-h6 font-weight-light mb-2">
-                {{ t('accueil.initialiserCompte.bienvenu') }}
+                {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.យល់ព្រម.សូមស្វាគមន៍') }}
               </h3>
-              <span class="text-caption text-grey">{{
-                t('accueil.initialiserCompte.sousTitreBienvenu')
-              }}</span>
               <p>
                 <v-btn
                   class="mt-3"
@@ -103,7 +97,7 @@
                   :loading="enCréation"
                   @click="() => créerCompte()"
                 >
-                  {{ t('accueil.initialiserCompte.cestParti') }}
+                  {{ t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.យល់ព្រម.បង្កើត') }}
                 </v-btn>
               </p>
             </div>
@@ -120,7 +114,7 @@
           :disabled="!retourActif.actif"
           @click="retour"
         >
-          {{ t('communs.retour') }}
+          {{ t('ទូទៅ.មុន') }}
         </v-btn>
         <v-spacer></v-spacer>
         <v-btn
@@ -130,7 +124,7 @@
           :disabled="!suivantActif.actif"
           @click="suivant"
         >
-          {{ t('communs.suivant') }}
+          {{ t('ទូទៅ.បន្ទាប់') }}
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -219,13 +213,13 @@ const titreCarte = computed(() => {
   const é = listeÉtapes[étape.value];
   switch (é) {
     case 'noms':
-      return t('accueil.initialiserCompte.titreNoms');
+      return t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ចំណងជើង.ឈ្មោះ');
     case 'image':
-      return t('accueil.initialiserCompte.titreImage');
+      return t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ចំណងជើង.រូបភាព');
     case 'persister':
-      return t('accueil.initialiserCompte.titrePersister');
+      return t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ចំណងជើង.ការពារ');
     case 'cestParti':
-      return t('accueil.initialiserCompte.titreCestParti');
+      return t('ស្វាគមន៍.ចាប់ផ្តើមគណនី.ចំណងជើង.យល់ព្រម');
     default:
       return '';
   }
@@ -234,8 +228,6 @@ const titreCarte = computed(() => {
 const sousTitreCarte = computed(() => {
   const é = listeÉtapes[étape.value];
   switch (é) {
-    case 'noms':
-      return t('accueil.initialiserCompte.sousTitreNoms');
     default:
       return '';
   }
@@ -249,7 +241,7 @@ const règlesNouveauNom = computed<string[] | undefined>(() => {
   if (!exprégÉcriture) return;
   const erreurLangue = !nom.value.match(new RegExp(exprégÉcriture, 'g'));
 
-  return erreurLangue ? [t('communs.erreurLangue', {langue: nom.value})] : undefined;
+  return erreurLangue ? [t('ទូទៅ.កំហុសភាសា', {langue: nom.value})] : undefined;
 });
 
 // Image
