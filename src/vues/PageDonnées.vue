@@ -59,7 +59,7 @@ const itemsDonnées = computed(() => {
   return mesDonnées.value?.map(d => {
     return {
       ...d.données,
-      id: d.empreinte,
+      id: d.id,
     };
   });
 });

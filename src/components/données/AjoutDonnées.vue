@@ -44,6 +44,7 @@
           color="primary"
           variant="outlined"
           :disabled="!élémentPrêt"
+          :loading="sauvegardeEnCours"
           @click="() => ajouterÉlémentDonnées()"
         >
           Sauvegarder
@@ -69,6 +70,7 @@ const constl = inject<ClientConstellation>('constl');
 
 // Navigation
 const dialogue = ref(false);
+const sauvegardeEnCours = ref(false);
 
 // Données
 const lat = ref<number>();
@@ -80,9 +82,11 @@ const salinité = ref<number>();
 const fermer = () => {
   lat.value = undefined;
   long.value = undefined;
-  temps.value = undefined;
+  temps.value = Date.now();
   salinité.value = undefined;
+
   dialogue.value = false;
+  sauvegardeEnCours.value = false;
 };
 
 const élémentPrêt = computed(() => {
@@ -98,6 +102,7 @@ const élémentPrêt = computed(() => {
 });
 
 const ajouterÉlémentDonnées = async () => {
+  sauvegardeEnCours.value = true;
   const élément = élémentPrêt.value;
   if (élément)
     await constl?.bds.ajouterÉlémentÀTableauUnique({

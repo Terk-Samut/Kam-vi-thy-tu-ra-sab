@@ -53,7 +53,7 @@ const itemsDonnées = computed(() => {
     return {
       auteur: d.idCompte,
       ...d.élément.données,
-      id: d.élément.empreinte,
+      id: d.élément.id,
     };
   });
 });

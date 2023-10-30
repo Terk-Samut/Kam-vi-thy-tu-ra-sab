@@ -8,7 +8,7 @@ export const COURRIEL_SIGNALEMENTS = 'julien.malard@mail.mcgill.ca';
 export const MAX_TAILLE_IMAGE = 500 * 1000; // 500 kilooctets
 
 // Structure de données
-export const idNuée = '';
+export const idNuée = '/orbitdb/zdpuAt9PVUHGEyrL43tWDmpBUrgoPPWZHX7AGXWk4ZhEZ1oik';
 export const idVariableDate = '';
 export const idVariableLong = '';
 export const idVariableLat = '';
