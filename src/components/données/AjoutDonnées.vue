@@ -59,10 +59,16 @@ import type {ClientConstellation, tableaux} from '@constl/ipa';
 import {computed, inject, ref} from 'vue';
 import {useDisplay} from 'vuetify';
 
-import {clefTableau, idColDate, idColLatitude, idColLongitude, idColSalinité, idNuée, schémaDonnées} from '/@/consts';
 import {
-  DonnéesSalinité,
-} from '../types';
+  clefTableau,
+  idColDate,
+  idColLatitude,
+  idColLongitude,
+  idColSalinité,
+  idNuée,
+  schémaDonnées,
+} from '/@/consts';
+import {DonnéesSalinité} from '../types';
 
 const {mdAndUp} = useDisplay();
 

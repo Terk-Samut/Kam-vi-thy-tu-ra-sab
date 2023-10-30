@@ -26,15 +26,23 @@
 <script setup lang="ts">
 import type {ClientConstellation, tableaux} from '@constl/ipa';
 import {computed, inject, ref} from 'vue';
-import { VDataTable } from 'vuetify/labs/VDataTable'
+import {VDataTable} from 'vuetify/labs/VDataTable';
 
 import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kilimukku/kilimukku-vue';
 
 import TitrePage from '/@/components/communs/TitrePage.vue';
 import {utiliserImagesDéco} from '/@/composables/images';
 import {enregistrerÉcoute} from '/@/components/utils';
-import {clefTableau, idColDate, idColLatitude, idColLongitude, idColSalinité, idNuée, schémaDonnées} from '/@/consts';
-import AjoutDonnees from '/@/components/données/AjoutDonnées.vue'
+import {
+  clefTableau,
+  idColDate,
+  idColLatitude,
+  idColLongitude,
+  idColSalinité,
+  idNuée,
+  schémaDonnées,
+} from '/@/consts';
+import AjoutDonnees from '/@/components/données/AjoutDonnées.vue';
 
 const constl = inject<ClientConstellation>('constl');
 
