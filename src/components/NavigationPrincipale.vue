@@ -94,8 +94,8 @@ const liens: {icône: string; chemin: string; texte: string}[] = [
 
   {
     icône: 'mdi-chart-line',
-    texte: t('navigation.visualiser'),
-    chemin: '/visualiser',
+    texte: t('navigation.réseau'),
+    chemin: '/réseau',
   },
 
   {

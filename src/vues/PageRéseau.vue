@@ -15,9 +15,7 @@
 <script setup lang="ts">
 import type {ClientConstellation, réseau, tableaux} from '@constl/ipa';
 
-import {
-  VDataTable,
-} from "vuetify/labs/VDataTable";
+import {VDataTable} from 'vuetify/labs/VDataTable';
 
 import {inject, ref} from 'vue';
 
@@ -25,8 +23,15 @@ import {கிளிமூக்கை_உபயோகி} from '/@/plugins/kili
 
 import TitrePage from '/@/components/communs/TitrePage.vue';
 import {enregistrerÉcoute} from '../components/utils';
-import { clefTableau, idColDate, idColLatitude, idColLongitude, idColSalinité, idNuée } from '../consts.js';
-import { computed } from 'vue';
+import {
+  clefTableau,
+  idColDate,
+  idColLatitude,
+  idColLongitude,
+  idColSalinité,
+  idNuée,
+} from '../consts.js';
+import {computed} from 'vue';
 
 const constl = inject<ClientConstellation>('constl');
 
@@ -40,45 +45,43 @@ enregistrerÉcoute(
     idNuée,
     clefTableau,
     f: x => (données.value = x),
-    nRésultatsDésirés: 1000,  // Pour l'instant...éventuellement, rendre ça plus dynamique
-  })
-)
-const itemsDonnées = computed(()=>{
-  return données.value?.map(d=>{
+    nRésultatsDésirés: 1000, // Pour l'instant...éventuellement, rendre ça plus dynamique
+  }),
+);
+const itemsDonnées = computed(() => {
+  return données.value?.map(d => {
     return {
       auteur: d.idCompte,
       ...d.élément.données,
       id: d.élément.empreinte,
-    }
-  })
-})
-const entêtes = computed<{title: string, align: 'end' | 'center' | 'start', key: string}[]>(
-  ()=>{
+    };
+  });
+});
+const entêtes = computed<{title: string; align: 'end' | 'center' | 'start'; key: string}[]>(() => {
   return [
     {
-      title: "ថ្ងៃខែឆ្នាំ",
+      title: 'ថ្ងៃខែឆ្នាំ',
       align: 'end',
-      key: idColDate
+      key: idColDate,
     },
     {
-      title: "រយៈទទឹង",
+      title: 'រយៈទទឹង',
       align: 'end',
-      key: idColLatitude
+      key: idColLatitude,
     },
     {
-      title: "រយៈបណ្តោយ",
+      title: 'រយៈបណ្តោយ',
       align: 'end',
-      key: idColLongitude
+      key: idColLongitude,
     },
     {
-      title: "ជាតិប្រៃ",
+      title: 'ជាតិប្រៃ',
       align: 'end',
-      key: idColSalinité
-    }
-  ]
-})
+      key: idColSalinité,
+    },
+  ];
+});
 
 // Contrôles de page
-const itemsParPage = ref(20)
-
+const itemsParPage = ref(20);
 </script>
